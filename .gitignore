@@ -53,3 +53,6 @@ text
 3. Orchestrate with Kubernetes.
 4. Establish GitOps practices.
 EOF
+venv/
+__pycache__/
+*.pyc

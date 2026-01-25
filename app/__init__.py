@@ -1,20 +1,12 @@
-from flask import Flask, jsonify
-import os
-import socket
+# app/__init__.py
+from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return jsonify({
-        "message": "Welcome to DevOps Project API",
-        "hostname": socket.gethostname(),
-        "status": "operational"
-    })
+    return {"message": "Hello DevOps!", "status": "ok"}
 
 @app.route('/health')
 def health():
-    return jsonify({"status": "healthy"}), 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
+    return {"status": "healthy"}, 200
